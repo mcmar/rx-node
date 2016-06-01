@@ -138,7 +138,7 @@ module.exports = {
 
     var disposable = source.subscribe(
       function (x) {
-        !stream.write(String(x), encoding) && source.pause();
+        !stream.write(x, encoding) && source.pause();
       },
       function (err) {
         stream.emit('error', err);
